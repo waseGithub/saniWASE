@@ -180,12 +180,12 @@ if __name__ == '__main__':
                     print('processing gas data')     
                     data_gas = data_gas.append(df)
                     os.remove(upload_file)
-                    display(data_gas)
+                    print(data_gas)
                  else:
                     print('processing tank data')
                     data_tank = data_tank.append(df)
                     os.remove(upload_file)
-                    display(data_tank)
+                    print(data_tank)
                     
                     
                   
