@@ -183,6 +183,7 @@ if __name__ == '__main__':
                     os.remove(upload_file)
                     print(data_gas)
                  else:
+                    df = df.iloc[:, : 3]
                     print('processing tank data')
                     data_tank = data_tank.append(df)
                     os.remove(upload_file)
