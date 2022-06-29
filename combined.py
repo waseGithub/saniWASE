@@ -193,12 +193,14 @@ if __name__ == '__main__':
              
              
 #              data[['ID','CH4','CO2','OH','Cnt']]= data.loc[:,'vals'].str.split(',',4, expand =True)
+             data_gas.columns =['ID','CH4','CO2','OH','Cnt']
              data_gas.reset_index(inplace =True)
              data_gas.set_index(['datetime'], inplace = True)
              data_gas = data_gas[::200]
              data_tank.reset_index(inplace =True)
              data_tank.set_index(['datetime'], inplace = True)
              data_tank = data_tank[::200]
+             data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              curr = time.time()
              curr = time.ctime(curr) 
              uploadfile1 = 'sensor_all_' + str(curr) + '.csv'
