@@ -165,7 +165,7 @@ if __name__ == '__main__':
        #######################################
       #######################################   
                 
-         if i == 7500: 
+         if i == 1000: 
              i = 0
              data_gas = pd.DataFrame()
              data_tank = pd.DataFrame()
@@ -199,8 +199,6 @@ if __name__ == '__main__':
              data_gas.reset_index(inplace =True)
              data_gas.set_index(['datetime'], inplace = True)
              data_gas = data_gas[::200]
-             data_tank.reset_index(inplace =True)
-             data_tank.set_index(['datetime'], inplace = True)
              data_tank = data_tank[::200]
              data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              curr = time.time()
