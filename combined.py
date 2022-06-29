@@ -177,7 +177,8 @@ if __name__ == '__main__':
                  df = df['vals'].str.split(',', expand=True)
                  df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
                  if len(df.columns) > 4:
-                    print('processing gas data')     
+                    print('processing gas data')
+                    df = df.iloc[:, : 5]
                     data_gas = data_gas.append(df)
                     os.remove(upload_file)
                     print(data_gas)
