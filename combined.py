@@ -186,7 +186,7 @@ if __name__ == '__main__':
                   curr = time.ctime(curr) 
                   uploadfile = 'sensor_all_' + str(curr) + '.csv'
                   data.to_csv(uploadfile)
-             else:
+             except:
                   data[['col','col','col']]= data.loc[:,'vals'].str.split(',',2, expand =True)
                   data.set_index(['datetime'], inplace = True)
                   curr = time.time()
