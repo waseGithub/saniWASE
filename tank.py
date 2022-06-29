@@ -45,7 +45,7 @@ ports = serial.tools.list_ports.comports()
 Megas = []
 for port, desc, hwid in sorted(ports):
         print("{}: {} [{}]".format(port, desc, hwid))
-        if '7583435393035160F0C1' in hwid:
+        if '758343539303514031D2' in hwid:
           print('Requested device found 1')
           print(port)
           Megas.append(port)
