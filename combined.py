@@ -167,39 +167,48 @@ if __name__ == '__main__':
                 
          if i == 300: 
              i = 0
-             data = pd.DataFrame()
+             data_gas = pd.DataFrame()
+             data_tank = pd.DataFrame()
              upload_file_list = ['Sensor_A.csv', 'Sensor_B.csv', 'Sensor_C.csv','Sensor_D.csv', 'Sensor_E.csv']
              
              colnames = ['datetime','vals']
              for upload_file in upload_file_list:
                  df = pd.read_csv(upload_file,index_col=0, skiprows=5, names = colnames)
-                 data = data.append(df)
-                 os.remove(upload_file)
-             data.index = pd.to_datetime(data.index, format="%a %b %d %X %Y")
-             try:
-                  data[['ID','CH4','CO2','OH','Cnt']]= data.loc[:,'vals'].str.split(',',4, expand =True)
-                  data.reset_index(inplace =True)
-                  data.drop('vals',axis=1, inplace=True)
-                  data.set_index(['ID', 'datetime'], inplace = True)
-                  data = data[::200]
-                  curr = time.time()
-                  curr = time.ctime(curr) 
-                  uploadfile = 'sensor_all_' + str(curr) + '.csv'
-                  data.to_csv(uploadfile)
-#              except:
-#                   data[['col','col','col']]= data.loc[:,'vals'].str.split(',',2, expand =True)
-#                   data.set_index(['datetime'], inplace = True)
-#                   curr = time.time()
-#                   curr = time.ctime(curr) 
-#                   uploadfile2 = 'tank_data' + str(curr) + '.csv'
-#                   data.to_csv(uploadfile2)
-               
+                 df = df['vals'].str.split(',', expand=True)
+                 df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
+                 if len(data.columns) == 5:
+                    print('processing gas data')     
+                    data_gas = data_gas.append(df)
+                    os.remove(upload_file)
+                    display(data_gas)
+                 else:
+                    print('processing tank data')
+                    data_tank = data_tank.append(df)
+                    os.remove(upload_file)
+                    display(data_tank)
+                    
+                    
+                  
+                         
              
-           
+             
+#              data[['ID','CH4','CO2','OH','Cnt']]= data.loc[:,'vals'].str.split(',',4, expand =True)
+             data_gas.reset_index(inplace =True)
+             data_gas.drop('vals',axis=1, inplace=True)
+             data_gas.set_index('datetime'], inplace = True)
+             data_gas = data_gas[::200]
+             curr = time.time()
+             curr = time.ctime(curr) 
+             uploadfile = 'sensor_all_' + str(curr) + '.csv'
+             data.to_csv(uploadfile)
+            
+
+               
+                
                  
                  
                  
-             upload_online = [uploadfile, uploadfile2]
+             upload_online = [uploadfile]
              for file in upload_online:
                  
                  gfile = drive.CreateFile({'x': [{'id': '317538577616-n40l0l6cvnar6bvv8mmks8huk5o80cs4.apps.googleusercontent.com'}]})
