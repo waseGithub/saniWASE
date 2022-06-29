@@ -39,38 +39,38 @@ for port in ports:
 print(ls)
 
 
-import serial.tools.list_ports
-ports = serial.tools.list_ports.comports()
+# import serial.tools.list_ports
+# ports = serial.tools.list_ports.comports()
 
-Megas = []
-unos = []
-for port, desc, hwid in sorted(ports):
-        print("{}: {} [{}]".format(port, desc, hwid))
-        if '7583435393035160F0C1' in hwid:
-          print('Requested device found mega 1')
-          print(port)
-          Megas.append(port)
-        elif '5583931353835151B072' in hwid:
-          print('Requested device found mega 2')
-          print(port)
-          Megas.append(port)
-        elif '8503731383535161A180' in hwid:
-          print('Requested device found mega 3')
-          print(port)
-          Megas.append(port)
-        elif '5503731333735150D090' in hwid:
-          print('Requested device found mega 4')
-          print(port)
-          Megas.append(port)
-        elif '758343539303514031D2' in hwid:
-          print('Requested device found uno 1')
-          print(port)
-          unos.append(port)
+# Megas = []
+# unos = []
+# for port, desc, hwid in sorted(ports):
+#         print("{}: {} [{}]".format(port, desc, hwid))
+#         if '7583435393035160F0C1' in hwid:
+#           print('Requested device found mega 1')
+#           print(port)
+#           Megas.append(port)
+#         elif '5583931353835151B072' in hwid:
+#           print('Requested device found mega 2')
+#           print(port)
+#           Megas.append(port)
+#         elif '8503731383535161A180' in hwid:
+#           print('Requested device found mega 3')
+#           print(port)
+#           Megas.append(port)
+#         elif '5503731333735150D090' in hwid:
+#           print('Requested device found mega 4')
+#           print(port)
+#           Megas.append(port)
+#         elif '758343539303514031D2' in hwid:
+#           print('Requested device found uno 1')
+#           print(port)
+#           unos.append(port)
           
-print('Megas as port:')          
-print(Megas)
-print('Unos as port:')          
-print(unos)
+# print('Megas as port:')          
+# print(Megas)
+# print('Unos as port:')          
+# print(unos)
          
            
 
