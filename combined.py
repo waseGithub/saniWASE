@@ -82,7 +82,7 @@ ser4 = serial.Serial(str(ls[4]),  38400, timeout = 25)
 ser5 = serial.Serial(str(ls[3]),  9600, timeout = 25)
 print("channels correct")
     
-time.sleep(25)
+time.sleep(5)
 
 if __name__ == '__main__':
     
