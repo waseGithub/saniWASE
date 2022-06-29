@@ -176,7 +176,7 @@ if __name__ == '__main__':
                  df = pd.read_csv(upload_file,index_col=0, skiprows=5, names = colnames)
                  df = df['vals'].str.split(',', expand=True)
                  df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
-                 if len(data.columns) == 5:
+                 if len(df.columns) == 5:
                     print('processing gas data')     
                     data_gas = data_gas.append(df)
                     os.remove(upload_file)
