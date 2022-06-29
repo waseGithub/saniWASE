@@ -194,13 +194,17 @@ if __name__ == '__main__':
              
 #              data[['ID','CH4','CO2','OH','Cnt']]= data.loc[:,'vals'].str.split(',',4, expand =True)
              data_gas.reset_index(inplace =True)
-             data_gas.drop('vals',axis=1, inplace=True)
              data_gas.set_index(['datetime'], inplace = True)
              data_gas = data_gas[::200]
+             data_tank.reset_index(inplace =True)
+             data_tank.set_index(['datetime'], inplace = True)
+             data_tank = data_tank[::200]
              curr = time.time()
              curr = time.ctime(curr) 
-             uploadfile = 'sensor_all_' + str(curr) + '.csv'
-             data.to_csv(uploadfile)
+             uploadfile1 = 'sensor_all_' + str(curr) + '.csv'
+             uploadfile2 = 'tank_data' + str(curr) + '.csv'
+             data_gas.to_csv(uploadfile1)
+             data_tank.to_csv(uploadfile2)
             
 
                
@@ -208,7 +212,7 @@ if __name__ == '__main__':
                  
                  
                  
-             upload_online = [uploadfile]
+             upload_online = [uploadfile1, uploadfile2]
              for file in upload_online:
                  
                  gfile = drive.CreateFile({'x': [{'id': '317538577616-n40l0l6cvnar6bvv8mmks8huk5o80cs4.apps.googleusercontent.com'}]})
