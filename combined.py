@@ -195,7 +195,7 @@ if __name__ == '__main__':
 #              data[['ID','CH4','CO2','OH','Cnt']]= data.loc[:,'vals'].str.split(',',4, expand =True)
              data_gas.reset_index(inplace =True)
              data_gas.drop('vals',axis=1, inplace=True)
-             data_gas.set_index('datetime'], inplace = True)
+             data_gas.set_index(['datetime'], inplace = True)
              data_gas = data_gas[::200]
              curr = time.time()
              curr = time.ctime(curr) 
