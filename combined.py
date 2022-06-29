@@ -78,7 +78,6 @@ ser1 = serial.Serial(str(ls[0]),  38400, timeout = 25)
 ser2 = serial.Serial(str(ls[1]),  38400, timeout = 25)
 ser3 = serial.Serial(str(ls[2]),  38400, timeout = 25)
 ser4 = serial.Serial(str(ls[4]),  38400, timeout = 25)
-
 ser5 = serial.Serial(str(ls[3]),  38400, timeout = 25)
 print("channels correct")
     
