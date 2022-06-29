@@ -70,7 +70,7 @@ for port, desc, hwid in sorted(ports):
 print('Megas as port:')          
 print(Megas)
 print('Unos as port:')          
-print(Megas)
+print(unos)
          
            
 
@@ -151,11 +151,11 @@ if __name__ == '__main__':
           
          if ser5.in_waiting > 0:
            
-            line = ser2.readline().decode("utf-8")
+            line = ser5.readline().decode("utf-8")
             print(line)
             
             with open ("tank_level.csv","a") as f:
-                
+                print('writing tank data')
                 writer = csv.writer(f, delimiter=",")
                 writer.writerow([time.asctime(),line])
                 
