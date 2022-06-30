@@ -158,13 +158,13 @@ if __name__ == '__main__':
                 
                 writer = csv.writer(f, delimiter=",")
                 writer.writerow([time.asctime(),line])
-          print('writing gas data')
-          print(line1)
-          print(line2)
-          print(line3)
-          print(line4)
-          print('writing tank data')
-          print(line5)
+         print('writing gas data')
+         print(line1)
+         print(line2)
+         print(line3)
+         print(line4)
+         print('writing tank data')
+         print(line5)
                 
          #######################################
         #######################################
