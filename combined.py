@@ -156,9 +156,11 @@ if __name__ == '__main__':
                 writer.writerow([time.asctime(),line4])
           
          if ser5.in_waiting > 0:
-           
-            line5 = ser5.readline().decode("utf-8")
-           
+            try:
+                line5 = ser5.readline().decode("utf-8")
+            except SerialException:
+               sleep(0.01)  
+               continue
             
             with open ("Sensor_E.csv","a") as f:
                 
