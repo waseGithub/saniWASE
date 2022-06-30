@@ -1,4 +1,5 @@
 import serial
+from serial import SerialException
 import time
 import csv
 import os
