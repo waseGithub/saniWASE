@@ -113,7 +113,7 @@ if __name__ == '__main__':
              with open ("Sensor_A.csv","a") as f:
                 
                  writer = csv.writer(f, delimiter=",")
-                 writer.writerow([time.asctime(),line])
+                 writer.writerow([time.asctime(),line1])
                 
 
          if ser2.in_waiting > 0:
@@ -124,7 +124,7 @@ if __name__ == '__main__':
              with open ("Sensor_B.csv","a") as f:
                 
                  writer = csv.writer(f, delimiter=",")
-                 writer.writerow([time.asctime(),line])
+                 writer.writerow([time.asctime(),line2])
                 
                 
                 
@@ -136,7 +136,7 @@ if __name__ == '__main__':
             with open ("Sensor_C.csv","a") as f:
                 
                 writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line])
+                writer.writerow([time.asctime(),line3])
          
                 
          if ser4.in_waiting > 0:
@@ -147,7 +147,7 @@ if __name__ == '__main__':
             with open ("Sensor_D.csv","a") as f:
                 
                 writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line])
+                writer.writerow([time.asctime(),line4])
           
          if ser5.in_waiting > 0:
            
@@ -157,7 +157,7 @@ if __name__ == '__main__':
             with open ("Sensor_E.csv","a") as f:
                 
                 writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line])
+                writer.writerow([time.asctime(),line5])
          print('writing gas data')
          print(line1)
          print(line2)
