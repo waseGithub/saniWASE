@@ -23,6 +23,12 @@ device_re = re.compile(b"Bus\s+(?P<bus>\d+)\s+Device\s+(?P<device>\d+).+ID\s(?P<
 df = subprocess.check_output("lsusb")
 devices = []
 
+line1 = None
+line2 = None
+line3 = None 
+line4 = None 
+line5 = None
+
 
 
 
