@@ -100,14 +100,15 @@ if __name__ == '__main__':
    
     while True:
          i +=1
+         print('Current count =')
          print(i)
     
        
         
          if ser1.in_waiting > 0:
            
-             line = ser1.readline().decode("utf-8")
-             print(line)
+             line1 = ser1.readline().decode("utf-8")
+            
             
              with open ("Sensor_A.csv","a") as f:
                 
@@ -117,8 +118,8 @@ if __name__ == '__main__':
 
          if ser2.in_waiting > 0:
            
-             line = ser2.readline().decode("utf-8")
-             print(line)
+             line2 = ser2.readline().decode("utf-8")
+            
             
              with open ("Sensor_B.csv","a") as f:
                 
@@ -129,8 +130,8 @@ if __name__ == '__main__':
                 
          if ser3.in_waiting > 0:
            
-            line = ser3.readline().decode("utf-8")
-            print(line)
+            line3 = ser3.readline().decode("utf-8")
+           
             
             with open ("Sensor_C.csv","a") as f:
                 
@@ -140,8 +141,8 @@ if __name__ == '__main__':
                 
          if ser4.in_waiting > 0:
            
-            line = ser4.readline().decode("utf-8")
-            print(line)
+            line4 = ser4.readline().decode("utf-8")
+         
             
             with open ("Sensor_D.csv","a") as f:
                 
@@ -150,13 +151,20 @@ if __name__ == '__main__':
           
          if ser5.in_waiting > 0:
            
-            line = ser5.readline().decode("utf-8")
-            print(line)
+            line5 = ser5.readline().decode("utf-8")
+           
             
             with open ("Sensor_E.csv","a") as f:
-                print('writing tank data')
+                
                 writer = csv.writer(f, delimiter=",")
                 writer.writerow([time.asctime(),line])
+          print('writing gas data')
+          print(line1)
+          print(line2)
+          print(line3)
+          print(line4)
+          print('writing tank data')
+          print(line5)
                 
          #######################################
         #######################################
