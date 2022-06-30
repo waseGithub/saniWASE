@@ -157,7 +157,7 @@ if __name__ == '__main__':
           
          if ser5.in_waiting > 0:
            
-            line5 = ser5.readline()
+            line5 = ser5.readline().decode("utf-8")
            
             
             with open ("Sensor_E.csv","a") as f:
