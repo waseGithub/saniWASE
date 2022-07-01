@@ -220,7 +220,6 @@ if __name__ == '__main__':
              try:
                  data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              except ValueError:
-                 print(tank_data)
                  pass
                 
              curr = time.time()
