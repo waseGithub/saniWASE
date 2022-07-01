@@ -218,7 +218,7 @@ if __name__ == '__main__':
 #              data_tank = data_tank[::50]
 #              data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              try:
-                 data_tank.set_axis(['Sensor_value','EQ_waste_height_mm','EQ_volume_%'], axis=1)
+                 data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              except ValueError:
                  print(tank_data)
                 
