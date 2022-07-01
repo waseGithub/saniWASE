@@ -216,13 +216,22 @@ if __name__ == '__main__':
              data_gas.set_index(['datetime'], inplace = True)
              data_gas = data_gas[::200]
 #              data_tank = data_tank[::50]
-             data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
+#              data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
+             try:
+                 data_tank.set_axis(['Sensor_value','EQ_waste_height_mm','EQ_volume_%'], axis=1)
+             except ValueError:
+                 print(tank_data)
+                
              curr = time.time()
              curr = time.ctime(curr) 
              uploadfile1 = 'sensor_all_' + str(curr) + '.csv'
              uploadfile2 = 'tank_data' + str(curr) + '.csv'
              data_gas.to_csv(uploadfile1)
              data_tank.to_csv(uploadfile2)
+               
+               
+               
+       
             
 
                
