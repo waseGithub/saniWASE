@@ -84,7 +84,7 @@ print(unos)
 ser1 = serial.Serial(str(Megas[0]),  38400, timeout = 25)
 ser2 = serial.Serial(str(Megas[1]),  38400, timeout = 25)
 ser3 = serial.Serial(str(Megas[2]),  38400, timeout = 25)
-ser4 = serial.Serial(str(Megas[4]),  38400, timeout = 25)
+ser4 = serial.Serial(str(Megas[3]),  38400, timeout = 25)
 ser5 = serial.Serial(str(uno[0]),  38400, timeout = 25)
 print("channels correct")
     
