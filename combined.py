@@ -53,23 +53,23 @@ Megas = []
 unos = []
 for port, desc, hwid in sorted(ports):
         print("{}: {} [{}]".format(port, desc, hwid))
-        if '0042' in hwid:
+        if '2341:0042' in hwid:
           print('Requested device found mega 1')
           print(port)
           Megas.append(port)
-        elif '0042' in hwid:
+        elif '2341:0042' in hwid:
           print('Requested device found mega 2')
           print(port)
           Megas.append(port)
-        elif '0042' in hwid:
+        elif '2341:0042' in hwid:
           print('Requested device found mega 3')
           print(port)
           Megas.append(port)
-        elif '0042' in hwid:
+        elif '2341:0042' in hwid:
           print('Requested device found mega 4')
           print(port)
           Megas.append(port)
-        elif '0043' in hwid:
+        elif '2341:0043' in hwid:
           print('Requested device found uno 1')
           print(port)
           unos.append(port)
@@ -167,12 +167,12 @@ if __name__ == '__main__':
                 writer = csv.writer(f, delimiter=",")
                 writer.writerow([time.asctime(),line5])
          print('writing gas data')
-         print(line3)
          print(line1)
-         print(line5)
+         print(line2)
+         print(line3)
          print(line4)
          print('writing tank data')
-         print(line2)
+         print(line5)
                 
          #######################################
         #######################################
