@@ -53,23 +53,23 @@ Megas = []
 unos = []
 for port, desc, hwid in sorted(ports):
         print("{}: {} [{}]".format(port, desc, hwid))
-        if '7583435393035160F0C1' in hwid:
+        if '0042' in hwid:
           print('Requested device found mega 1')
           print(port)
           Megas.append(port)
-        elif '5583931353835151B072' in hwid:
+        elif '0042' in hwid:
           print('Requested device found mega 2')
           print(port)
           Megas.append(port)
-        elif '8503731383535161A180' in hwid:
+        elif '0042' in hwid:
           print('Requested device found mega 3')
           print(port)
           Megas.append(port)
-        elif '5503731333735150D090' in hwid:
+        elif '0042' in hwid:
           print('Requested device found mega 4')
           print(port)
           Megas.append(port)
-        elif '758343539303514031D2' in hwid:
+        elif '0043' in hwid:
           print('Requested device found uno 1')
           print(port)
           unos.append(port)
