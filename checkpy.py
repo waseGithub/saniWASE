@@ -1,6 +1,7 @@
 import subprocess
-import smtplib
-from email.mime.text import MIMEText
+import yagmail
+# import smtplib
+# from email.mime.text import MIMEText
   
   
 pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
@@ -18,15 +19,18 @@ for process in pytonProcess:
       break
 if found == False:
   print('data script not running')
-  with open('error_msg_combined.txt', 'rb') as fp:
-      # Create a text/plain message
-      msg = MIMEText(fp.read())
-      msg['Subject'] = 'script:combined.py failure on systems:linux at site:saniwase_hepworth'
-      msg['From'] = harvey.rutland@wase.co.uk
-      msg['To'] = william.gambier@wase.co.uk
+#   with open('error_msg_combined.txt', 'rb') as fp:
+#       # Create a text/plain message
+#       msg = MIMEText(fp.read())
+#       msg['Subject'] = 'script:combined.py failure on systems:linux at site:saniwase_hepworth'
+#       msg['From'] = harvey.rutland@wase.co.uk
+#       msg['To'] = william.gambier@wase.co.uk
 
-      # Send the message via our own SMTP server, but don't include the
-      # envelope header.
-      s = smtplib.SMTP('localhost')
-      s.sendmail(me, [you], msg.as_string())
-      s.quit()
+#       # Send the message via our own SMTP server, but don't include the
+#       # envelope header.
+#       s = smtplib.SMTP('localhost')
+#       s.sendmail(me, [you], msg.as_string())
+#       s.quit()
+  
+  yag = yagmail.SMTP('harvey.rutland@wase.co.uk', 'pass')
+  yag.send('william.gambier@wase.co.uk', 'test', 'test')
