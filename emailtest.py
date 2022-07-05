@@ -1,23 +1,11 @@
-import smtplib 
-try: 
-    #Create your SMTP session 
-    smtp = smtplib.SMTP('smtp.gmail.com', 587) 
+import smtplib, ssl
 
-   #Use TLS to add security 
-    smtp.starttls() 
+port = 465  # For SSL
+password = '69methane69'
 
-    #User Authentication 
-    smtp.login("intern.wasetech@gmail.com","69methane69")
+# Create a secure SSL context
+context = ssl.create_default_context()
 
-    #Defining The Message 
-    message = "Message_you_need_to_send" 
-
-    #Sending the Email
-    smtp.sendmail("intern.wasetech@gmail.com", "hcrutland@mail.com",message) 
-
-    #Terminating the session 
-    smtp.quit() 
-    print ("Email sent successfully!") 
-
-except Exception as ex: 
-    print("Something went wrong....",ex)
+with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+    server.login("intern.wasetech@gmail.com", password)
+    # TODO: Send email here
