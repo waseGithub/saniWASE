@@ -7,7 +7,7 @@ pytonProcess = pytonProcess.split('\n')
 found = False 
 for process in pytonProcess:
     print(process)
-    if process == 'wase      206225  206171  0 19:58 pts/1    00:00:00 python3 combined.py':
+    if "combined.py" in process: 
       print('process found')
       found = True
       break
