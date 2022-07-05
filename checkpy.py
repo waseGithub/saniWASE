@@ -1,5 +1,6 @@
 import subprocess
 import yagmail
+import time
 import smtplib
 gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
@@ -21,9 +22,9 @@ found = False
 while(1):
 
   for process in pytonProcess:
-      print(process)
+#       print(process)
       if "combine.py" in process: 
-        print('process found')
+        print('combined.py process found')
         found = True
         first = True
       else:
@@ -45,6 +46,7 @@ while(1):
           smtp_server.sendmail(sent_from, to, email_text)
           smtp_server.close()
           print ("Email sent successfully!")
+          time.sleep(10)
       except Exception as ex:
           print ("Something went wrong….",ex)
 
