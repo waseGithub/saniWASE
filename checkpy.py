@@ -13,13 +13,13 @@ subject = 'test email'
 body = 'this is a test'
 
 
-
+global first
+global found
 first = True
 found = False
 
 while(1):
-  global first
-  global found
+
   for process in pytonProcess:
       print(process)
       if "combine.py" in process: 
