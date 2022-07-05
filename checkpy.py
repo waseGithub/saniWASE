@@ -32,7 +32,7 @@ while(1):
         first = True
         continue
       else:
-        print('combined.py process not in line')
+        print('-')
 
   
   
