@@ -6,8 +6,7 @@ gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
   
   
-pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
-pytonProcess = pytonProcess.split('\n')
+
 sent_from = gmail_user
 to = ['hcrutland@mail.com']
 subject = 'test email'
@@ -20,6 +19,8 @@ first = True
 found = False
 
 while(1):
+  pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
+  pytonProcess = pytonProcess.split('\n')
   time.sleep(3)
   
   found = False
