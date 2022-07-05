@@ -23,7 +23,7 @@ while(1):
   time.sleep(3)
   
   found = False
-  print(found)
+  
   for process in pytonProcess:
     
 #       print(process)
@@ -36,7 +36,7 @@ while(1):
         print('-')
 
   
-  
+  print(found)
   if found == False:
     print('data script not running')
     if first == True:
