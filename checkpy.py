@@ -18,7 +18,7 @@ for process in pytonProcess:
       break
 if found == False:
   print('data script not running')
-  with open(error_message_combined.txt, 'rb') as fp:
+  with open('error_message_combined.txt', 'rb') as fp:
       # Create a text/plain message
       msg = MIMEText(fp.read())
       msg['Subject'] = 'script:combined.py failure on systems:linux at site:saniwase_hepworth'
