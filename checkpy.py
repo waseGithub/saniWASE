@@ -23,7 +23,7 @@ while(1):
 
   for process in pytonProcess:
 #       print(process)
-      if "combine.py" in process: 
+      if "combined.py" in process: 
         print('combined.py process found')
         found = True
         first = True
