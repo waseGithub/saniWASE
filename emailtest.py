@@ -1,6 +1,6 @@
 import smtplib
 
-gmail_user = 'intern.wasetech@gmail.com'
+gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = '69methane69'
 
 sent_from = gmail_user
