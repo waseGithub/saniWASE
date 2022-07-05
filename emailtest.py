@@ -1,23 +1,27 @@
-# Import smtplib for the actual sending function
 import smtplib
 
-# Import the email modules we'll need
-from email.message import EmailMessage
+gmail_user = 'intern.wasetech@gmail.com'
+gmail_password = '69methane69'
 
-# Open the plain text file whose name is in textfile for reading.
-textfile = 'error_msg_combined.txt'
-with open(textfile) as fp:
-    # Create a text/plain message
-    msg = EmailMessage()
-    msg.set_content(fp.read())
+sent_from = gmail_user
+to = ['hcrutland@mail.com']
+subject = 'Lorem ipsum dolor sit amet'
+body = 'consectetur adipiscing elit'
 
-# me == the sender's email address
-# you == the recipient's email address
-msg['Subject'] = f'The contents of {textfile}'
-msg['From'] ='hcrutland@mail.com'
-msg['To'] = 'h.rutland@mail.com'
+email_text = """\
+From: %s
+To: %s
+Subject: %s
 
-# Send the message via our own SMTP server.
-s = smtplib.SMTP('localhost')
-s.send_message(msg)
-s.quit()
+%s
+""" % (sent_from, ", ".join(to), subject, body)
+
+try:
+    smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    smtp_server.ehlo()
+    smtp_server.login(gmail_user, gmail_password)
+    smtp_server.sendmail(sent_from, to, email_text)
+    smtp_server.close()
+    print ("Email sent successfully!")
+except Exception as ex:
+    print ("Something went wrong….",ex)
