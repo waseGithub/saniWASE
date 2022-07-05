@@ -1,7 +1,7 @@
 import smtplib
 
 gmail_user = 'autonomousemail1@gmail.com'
-gmail_password = '69methane69'
+gmail_password = 'odqcdosrnoipmxmd'
 
 sent_from = gmail_user
 to = ['hcrutland@mail.com']
