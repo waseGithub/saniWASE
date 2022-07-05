@@ -12,7 +12,7 @@ pytonProcess = pytonProcess.split('\n')
 found = False 
 for process in pytonProcess:
     print(process)
-    if "combined.py" in process: 
+    if "combine.py" in process: 
       print('process found')
       found = True
       break
