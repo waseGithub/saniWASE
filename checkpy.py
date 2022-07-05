@@ -1,36 +1,49 @@
 import subprocess
 import yagmail
-# import smtplib
-# from email.mime.text import MIMEText
+import smtplib
+gmail_user = 'autonomousemail1@gmail.com'
+gmail_password = 'odqcdosrnoipmxmd'
   
   
 pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
 pytonProcess = pytonProcess.split('\n')
+sent_from = gmail_user
+to = ['hcrutland@mail.com']
+subject = 'test email'
+body = 'this is a test'
 
 
 
 
-found = False 
-for process in pytonProcess:
-    print(process)
-    if "combine.py" in process: 
-      print('process found')
-      found = True
-      break
-if found == False:
-  print('data script not running')
-#   with open('error_msg_combined.txt', 'rb') as fp:
-#       # Create a text/plain message
-#       msg = MIMEText(fp.read())
-#       msg['Subject'] = 'script:combined.py failure on systems:linux at site:saniwase_hepworth'
-#       msg['From'] = harvey.rutland@wase.co.uk
-#       msg['To'] = william.gambier@wase.co.uk
+while(1):
+  for process in pytonProcess:
+      print(process)
+      if "combine.py" in process: 
+        print('process found')
+        found = True
+        first = True
+      else:
+        found = False 
+  if found == False:
+    print('data script not running')
+    if first == True:
+      first = False 
+      email_text = """\
+      From: %s
+      To: %s
+      Subject: %s
+      %s
+      """ % (sent_from, ", ".join(to), subject, body)
+      try:
+          smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+          smtp_server.ehlo()
+          smtp_server.login(gmail_user, gmail_password)
+          smtp_server.sendmail(sent_from, to, email_text)
+          smtp_server.close()
+          print ("Email sent successfully!")
+      except Exception as ex:
+          print ("Something went wrong….",ex)
 
-#       # Send the message via our own SMTP server, but don't include the
-#       # envelope header.
-#       s = smtplib.SMTP('localhost')
-#       s.sendmail(me, [you], msg.as_string())
-#       s.quit()
-  
-  yag = yagmail.SMTP('intern.wasetech', '69methane69')
-  yag.send('hcrutland@mail.com', 'test', 'test')
+ 
+
+
