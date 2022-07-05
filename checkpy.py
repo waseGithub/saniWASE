@@ -32,5 +32,5 @@ if found == False:
 #       s.sendmail(me, [you], msg.as_string())
 #       s.quit()
   
-  yag = yagmail.SMTP('harvey.rutland@wase.co.uk', 'Skatebate3838')
+  yag = yagmail.SMTP('intern.wasetech@gmail.com', '69methane69')
   yag.send('william.gambier@wase.co.uk', 'test', 'test')
