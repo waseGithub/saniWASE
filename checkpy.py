@@ -23,6 +23,7 @@ while(1):
   time.sleep(3)
   
   found = False
+  print(found)
   for process in pytonProcess:
     
 #       print(process)
