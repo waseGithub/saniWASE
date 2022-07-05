@@ -20,15 +20,18 @@ first = True
 found = False
 
 while(1):
+  time.sleep(3)
 
   for process in pytonProcess:
+    
 #       print(process)
       if "combined.py" in process: 
         print('combined.py process found')
         found = True
         first = True
       else:
-        found = False 
+        print('combined.py process not found')
+        found = False
   if found == False:
     print('data script not running')
     if first == True:
