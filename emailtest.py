@@ -5,7 +5,7 @@ import smtplib
 from email.message import EmailMessage
 
 # Open the plain text file whose name is in textfile for reading.
-textfile = error_msg_combined.txt
+textfile = 'error_msg_combined.txt'
 with open(textfile) as fp:
     # Create a text/plain message
     msg = EmailMessage()
