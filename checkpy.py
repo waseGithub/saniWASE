@@ -21,7 +21,8 @@ found = False
 
 while(1):
   time.sleep(3)
-
+  
+  found = False
   for process in pytonProcess:
     
 #       print(process)
@@ -31,8 +32,10 @@ while(1):
         first = True
         continue
       else:
-        print('combined.py process not found')
-        found = False
+        print('combined.py process not in line')
+
+  
+  
   if found == False:
     print('data script not running')
     if first == True:
