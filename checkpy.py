@@ -29,6 +29,7 @@ while(1):
         print('combined.py process found')
         found = True
         first = True
+        continue
       else:
         print('combined.py process not found')
         found = False
