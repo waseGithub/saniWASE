@@ -14,8 +14,10 @@ body = 'this is a test'
 
 
 
+first = True
 
 while(1):
+  global first
   for process in pytonProcess:
       print(process)
       if "combine.py" in process: 
