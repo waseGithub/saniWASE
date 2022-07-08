@@ -4,6 +4,9 @@ import time
 import smtplib
 gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
+import combined.py
+
+
   
   
 
@@ -17,6 +20,7 @@ global first
 global found
 first = True
 found = False
+attempts = 0 
 
 while(1):
   pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
@@ -40,24 +44,30 @@ while(1):
 #   print(found)
   if found == False:
     print('data script not running')
-    if first == True:
-      first = False 
-      email_text = """\
-      From: %s
-      To: %s
-      Subject: %s
-      %s
-      """ % (sent_from, ", ".join(to), subject, body)
-      try:
-          smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-          smtp_server.ehlo()
-          smtp_server.login(gmail_user, gmail_password)
-          smtp_server.sendmail(sent_from, to, email_text)
-          smtp_server.close()
-          print ("Email sent successfully!")
-          time.sleep(10)
-      except Exception as ex:
-          print ("Something went wrong….",ex)
+    if attemps <= 3:
+      python3 combined.py 
+      attemptes +=1 
+      print('attempting')
+    if attemps == 4:
+      attempts = 0
+      if first == True:
+        first = False 
+        email_text = """\
+        From: %s
+        To: %s
+        Subject: %s
+        %s
+        """ % (sent_from, ", ".join(to), subject, body)
+        try:
+            smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            smtp_server.ehlo()
+            smtp_server.login(gmail_user, gmail_password)
+            smtp_server.sendmail(sent_from, to, email_text)
+            smtp_server.close()
+            print ("Email sent successfully!")
+            time.sleep(10)
+        except Exception as ex:
+            print ("Something went wrong….",ex)
 
  
 
