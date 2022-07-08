@@ -46,7 +46,7 @@ while(1):
     print('data script not running')
     if attempts <= 3:
       os.system('python3 combined.py')
-      attemptes +=1 
+      attempts +=1 
       print('attempts =' + attempts)
       print('attempting')
     if attempts == 4:
