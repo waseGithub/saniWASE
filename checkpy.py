@@ -47,8 +47,9 @@ while(1):
     if attemps <= 3:
       Popen('python3 combined.py')
       attemptes +=1 
+      print('attempts =' + attempts)
       print('attempting')
-    if attemps == 4:
+    if attempts == 4:
       attempts = 0
       if first == True:
         first = False 
