@@ -44,7 +44,7 @@ while(1):
 #   print(found)
   if found == False:
     print('data script not running')
-    if attemps <= 3:
+    if attempts <= 3:
       Popen('python3 combined.py')
       attemptes +=1 
       print('attempts =' + attempts)
