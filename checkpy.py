@@ -46,9 +46,10 @@ while(1):
     print('data script not running')
     if attempts <= 3:
 #       call(["python3", "combined.py"])
-      call(["gnome-terminal", "-x", "sh", "-c", "espeak -ven+m1 -f python3 combined.py; bash"])
+      call(["gnome-terminal", "-x", "sh", "-c", "python3 combined.py; bash"])
       attempts +=1 
-      print('attempts =' + attempts)
+      print('attempts =')
+      print(attempts)
       print('attempting')
     if attempts == 4:
       attempts = 0
