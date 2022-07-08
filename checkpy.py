@@ -4,7 +4,7 @@ import time
 import smtplib
 gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
-from subprocess import Popen
+import os
 
 
   
@@ -45,7 +45,7 @@ while(1):
   if found == False:
     print('data script not running')
     if attempts <= 3:
-      Popen('python3 combined.py')
+      os.system('python3 combined.py')
       attemptes +=1 
       print('attempts =' + attempts)
       print('attempting')
