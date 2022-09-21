@@ -8,7 +8,7 @@ from subprocess import call
 
 
   
-
+print("starting now")
 time.sleep(10)
 
 sent_from = gmail_user
