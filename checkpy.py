@@ -12,7 +12,7 @@ from subprocess import call
 time.sleep(60)
 
 sent_from = gmail_user
-to = ['william.gambier@wase.co.uk']
+to = ['harvey.rutland@wase.co.uk']
 subject = 'error report- script:combined.py site:saniwase_linux'
 body = 'Data script combined.py it not recording data-- Script description: logging gas flow / percentage, and tank level data to google drive intern account'
 
