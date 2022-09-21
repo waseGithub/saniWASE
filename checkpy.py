@@ -9,7 +9,7 @@ from subprocess import call
 
   
 
-time.sleep(200)
+time.sleep(60)
 
 sent_from = gmail_user
 to = ['william.gambier@wase.co.uk']
