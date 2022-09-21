@@ -12,7 +12,7 @@ print("starting now")
 time.sleep(10)
 
 sent_from = gmail_user
-to = ['harvey.rutland@wase.co.uk']
+to = ['hcrutland@mail.com']
 subject = 'error report- script:combined.py site:saniwase_linux'
 body = 'Data script combined.py it not recording data-- Script description: logging gas flow / percentage, and tank level data to google drive intern account'
 
