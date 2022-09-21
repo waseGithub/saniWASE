@@ -56,7 +56,7 @@ while(1):
       print('attempts =')
       print(attempts)
       print('attempting')
-    if attempts == 5:
+    if attempts == 3:
       attempts = 0
       if first == True:
         first = False 
