@@ -19,7 +19,7 @@ import re
 import subprocess
 import pandas as pd 
 import dictpy
-time.sleep(10)
+time.sleep(2)
 device_re = re.compile(b"Bus\s+(?P<bus>\d+)\s+Device\s+(?P<device>\d+).+ID\s(?P<id>\w+:\w+)\s(?P<tag>.+)$", re.I)
 df = subprocess.check_output("lsusb")
 devices = []
