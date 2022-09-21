@@ -9,7 +9,7 @@ from subprocess import call
 
   
 
-time.sleep(60)
+time.sleep(10)
 
 sent_from = gmail_user
 to = ['harvey.rutland@wase.co.uk']
@@ -26,7 +26,7 @@ attempts = 0
 while(1):
   pytonProcess = subprocess.check_output("ps -ef | grep .py",shell=True).decode()
   pytonProcess = pytonProcess.split('\n')
-  time.sleep(40)
+  time.sleep(20)
   
   found = False
   
