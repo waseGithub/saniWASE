@@ -109,70 +109,70 @@ if __name__ == '__main__':
          i +=1
          print('Current count =')
          print(i)
-    
-       
-        
-         if ser1.in_waiting > 0:
-           
-             line1 = ser1.readline().decode("utf-8")
+         try:
+            if ser1.in_waiting > 0:
             
-            
-             with open ("Sensor_A.csv","a") as f:
+                line1 = ser1.readline().decode("utf-8")
                 
-                 writer = csv.writer(f, delimiter=",")
-                 writer.writerow([time.asctime(),line1])
                 
+                with open ("Sensor_A.csv","a") as f:
+                    
+                    writer = csv.writer(f, delimiter=",")
+                    writer.writerow([time.asctime(),line1])
+                    
 
-         if ser2.in_waiting > 0:
-           
-             line2 = ser2.readline().decode("utf-8")
+            if ser2.in_waiting > 0:
             
+                line2 = ser2.readline().decode("utf-8")
+                
+                
+                with open ("Sensor_B.csv","a") as f:
+                    
+                    writer = csv.writer(f, delimiter=",")
+                    writer.writerow([time.asctime(),line2])
+                    
+                    
+                    
+            if ser3.in_waiting > 0:
             
-             with open ("Sensor_B.csv","a") as f:
-                
-                 writer = csv.writer(f, delimiter=",")
-                 writer.writerow([time.asctime(),line2])
-                
-                
-                
-         if ser3.in_waiting > 0:
-           
-            line3 = ser3.readline().decode("utf-8")
-           
+                line3 = ser3.readline().decode("utf-8")
             
-            with open ("Sensor_C.csv","a") as f:
                 
-                writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line3])
-         
-                
-         if ser4.in_waiting > 0:
-           
-            line4 = ser4.readline().decode("utf-8")
-         
+                with open ("Sensor_C.csv","a") as f:
+                    
+                    writer = csv.writer(f, delimiter=",")
+                    writer.writerow([time.asctime(),line3])
             
-            with open ("Sensor_D.csv","a") as f:
-                
-                writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line4])
-          
-         if ser5.in_waiting > 0:
-            try:
-                line5 = ser5.readline().decode("utf-8")
-            except SerialException:
-               continue
+                    
+            if ser4.in_waiting > 0:
             
-            with open ("Sensor_E.csv","a") as f:
+                line4 = ser4.readline().decode("utf-8")
+            
                 
-                writer = csv.writer(f, delimiter=",")
-                writer.writerow([time.asctime(),line5])
-         print('writing gas data')
-         print(line1)
-         print(line2)
-         print(line3)
-         print(line4)
-         print('writing tank data')
-         print(line5)
+                with open ("Sensor_D.csv","a") as f:
+                    
+                    writer = csv.writer(f, delimiter=",")
+                    writer.writerow([time.asctime(),line4])
+            
+            if ser5.in_waiting > 0:
+                try:
+                    line5 = ser5.readline().decode("utf-8")
+                except SerialException:
+                continue
+                
+                with open ("Sensor_E.csv","a") as f:
+                    
+                    writer = csv.writer(f, delimiter=",")
+                    writer.writerow([time.asctime(),line5])
+            print('writing gas data')
+            print(line1)
+            print(line2)
+            print(line3)
+            print(line4)
+            print('writing tank data')
+            print(line5)
+         except UnicodeDecodeError:
+             pass
                 
          #######################################
         #######################################
