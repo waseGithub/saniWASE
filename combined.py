@@ -158,7 +158,7 @@ if __name__ == '__main__':
                 try:
                     line5 = ser5.readline().decode("utf-8")
                 except SerialException:
-                continue
+                    continue
                 
                 with open ("Sensor_E.csv","a") as f:
                     
