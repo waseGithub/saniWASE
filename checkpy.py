@@ -4,7 +4,7 @@ import time
 import smtplib
 gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
-from subprocess import call
+from subprocess import call, Popen, CREATE_NEW_CONSOLE
 
 
   
@@ -47,7 +47,7 @@ while(1):
     print('data script not running')
     if attempts <= 3:
       #call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"])
-      subprocess.Popen('python3 combined.py',shell = True, creationflags=CREATE_NEW_CONSOLE)
+      Popen('python3 combined.py',shell = True, creationflags=CREATE_NEW_CONSOLE)
    
      
   
