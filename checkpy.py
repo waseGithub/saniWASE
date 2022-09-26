@@ -46,8 +46,7 @@ while(1):
     print('data script not running')
     if attempts <= 3:
       #call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"])
-      subprocess.call("combined.py",shell=True)
-      
+      subprocess.Popen('python3 combined.py',shell = true, creationflags=CREATE_NEW_CONSOLE)
    
      
   
