@@ -48,7 +48,7 @@ while(1):
     if attempts <= 3:
       #call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"])
       #call('python3 combined.py',creationflags=subprocess.CREATE_NEW_CONSOLE)
-      call(["gnome-terminal", "-e", "python3 combined.py" ])
+      call(["gnome-terminal", "-e", "python3 combined.py &" ])
    
      
   
