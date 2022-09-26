@@ -45,7 +45,7 @@ while(1):
   if found == False:
     print('data script not running')
     if attempts <= 3:
-      call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"], shell=True)
+      call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"])
       #call(["python3", "combined.py"])
      
   
