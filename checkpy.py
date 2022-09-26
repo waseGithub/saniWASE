@@ -9,7 +9,7 @@ from subprocess import call, Popen
 
   
 print("starting now")
-time.sleep(5)
+
 
 sent_from = gmail_user
 to = ['hcrutland@mail.com']
