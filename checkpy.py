@@ -47,7 +47,8 @@ while(1):
     print('data script not running')
     if attempts <= 3:
       #call(["gnome-terminal",  "-x", "sh", "-c", "python3 combined.py"])
-      call('python3 combined.py',creationflags=subprocess.CREATE_NEW_CONSOLE)
+      #call('python3 combined.py',creationflags=subprocess.CREATE_NEW_CONSOLE)
+      call(["lxterminal", "-e", "python3 combined.py" ])
    
      
   
