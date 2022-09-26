@@ -6,9 +6,10 @@ gmail_user = 'autonomousemail1@gmail.com'
 gmail_password = 'odqcdosrnoipmxmd'
 from subprocess import call
 
-time.sleep(30)
+
   
 print("starting now")
+time.sleep(30)
 
 sent_from = gmail_user
 to = ['hcrutland@mail.com']
