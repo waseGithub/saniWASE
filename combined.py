@@ -224,8 +224,8 @@ if __name__ == '__main__':
                 
              curr = time.time()
              curr = time.ctime(curr) 
-             uploadfile1 = 'sensor_all_' + str(curr) + '.csv'
-             uploadfile2 = 'tank_data' + str(curr) + '.csv'
+             uploadfile1 = 'sensor_all' + '.csv'
+             uploadfile2 = 'tank_data' + '.csv'
              data_gas.to_csv(uploadfile1)
              data_tank.to_csv(uploadfile2)
                
@@ -239,11 +239,13 @@ if __name__ == '__main__':
                  
                  
                  
-             upload_online = [uploadfile1, uploadfile2]
-             for file in upload_online:
+            #  upload_online = [uploadfile1, uploadfile2]
+            #  for file in upload_online:
+            #      file.to_csv(file)
                  
-                 gfile = drive.CreateFile({'x': [{'id': '317538577616-n40l0l6cvnar6bvv8mmks8huk5o80cs4.apps.googleusercontent.com'}]})
-                 gfile.SetContentFile(file)
-                 gfile.Upload() # Upload the file.
-                 os.remove(file)
+                #  gfile = drive.CreateFile({'x': [{'id': '317538577616-n40l0l6cvnar6bvv8mmks8huk5o80cs4.apps.googleusercontent.com'}]})
+                #  gfile.SetContentFile(file)
+                #  gfile.Upload() # Upload the file.
+
+                #  os.remove(file)
                        
