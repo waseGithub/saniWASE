@@ -109,8 +109,6 @@ if __name__ == '__main__':
     start_time = datetime.datetime.now()
     while True:
       
-         print('Current count =')
-         print(i)
          try:
             if ser1.in_waiting > 0:
             
@@ -183,7 +181,7 @@ if __name__ == '__main__':
        #######################################
       ####################################### 
 
-         time_gap = 10
+         time_gap = 3
 
          print('Targat time gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
@@ -228,7 +226,7 @@ if __name__ == '__main__':
              data_gas.reset_index(inplace =True)
              data_gas.set_index(['datetime'], inplace = True)
             #  data_gas = data_gas[::200]
-             data_tank = data_tank[::50]
+            #  data_tank = data_tank[::50]
 #              data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              try:
                  data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
