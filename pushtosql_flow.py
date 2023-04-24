@@ -61,9 +61,6 @@ print(df_biogasflow)
 
 
 
-print(df_biogasflow)
-
-
 
 
 
