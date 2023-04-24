@@ -190,7 +190,7 @@ if __name__ == '__main__':
              
              colnames = ['datetime','vals']
              for upload_file in upload_file_list:
-                 df = pd.read_csv(upload_file,index_col=0, skiprows=5, names = colnames)
+                 df = pd.read_csv(upload_file,index_col=0, skiprows=0, names = colnames)
                  df = df['vals'].str.split(',', expand=True)
                  df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
                  if len(df.columns) > 4:
