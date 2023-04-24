@@ -182,7 +182,7 @@ if __name__ == '__main__':
        #######################################
       #######################################   
                 
-         if i == 100: 
+         if i == 50: 
              i = 0
              data_gas = pd.DataFrame()
              data_tank = pd.DataFrame()
@@ -194,17 +194,17 @@ if __name__ == '__main__':
                  df = df['vals'].str.split(',', expand=True)
                  df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
                  if len(df.columns) > 4:
-                    print('processing gas data')
+                    # print('processing gas data')
                     df = df.iloc[:, : 5]
                     data_gas = data_gas.append(df)
                     os.remove(upload_file)
-                    print(data_gas)
+                    # print(data_gas)
                  else:
                     df = df.iloc[:, : 3]
-                    print('processing tank data')
+                    # print('processing tank data')
                     data_tank = data_tank.append(df)
                     os.remove(upload_file)
-                    print(data_tank)
+                    # print(data_tank)
                     
                     
                   
