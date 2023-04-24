@@ -186,7 +186,7 @@ if __name__ == '__main__':
          time_gap = 3  
          current_time = datetime.datetime.now()
          time_difference = current_time - start_time
-         print('time diff is:: ', time_difference, 'time till next push is::', (time_gap - time_difference))
+         print('time diff is:: ', time_difference)
 
          
          if time_difference >= datetime.timedelta(minutes=time_gap):
