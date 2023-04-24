@@ -57,7 +57,7 @@ print(Megas)
          
            
 
-ser1 = serial.Serial(str(ls[0]),  9600, timeout = 25)
+ser1 = serial.Serial(str(ls[0]),  9600, timeout = 100000000)
 print("channels correct")
     
 time.sleep(25)
@@ -67,11 +67,12 @@ if __name__ == '__main__':
     
     ser1.flush()
     i = 0
+    x = 0
 
    
     while True:
          i +=1
-         print(i)
+        # print(i)
     
        
         
@@ -81,7 +82,7 @@ if __name__ == '__main__':
              print(line)
             
              with open ("Sensor_tanklevel.csv","a") as f:
-                
+                 x = 1
                  writer = csv.writer(f, delimiter=",")
                  writer.writerow([time.asctime(),line])
                 
@@ -93,7 +94,9 @@ if __name__ == '__main__':
        #######################################
       #######################################   
                 
-         if i == 1000: 
+         if x == 1: 
+             print('waiting')
+             x = 0
              i = 0
              data = pd.DataFrame()
              upload_file_list = ['Sensor_tanklevel.csv']

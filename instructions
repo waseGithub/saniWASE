@@ -1,0 +1,2 @@
+ps -fA | grep python3       (this checks if the opyton script is running)
+python3 serialtestpd.py      (this runs the script manually in home (standard) directory)
