@@ -5,6 +5,7 @@ import csv
 import os
 import pandas as pd
 import numpy
+import subprocess
 
 
 import serial.tools.list_ports
@@ -228,6 +229,11 @@ if __name__ == '__main__':
              uploadfile2 = 'tank_data' + '.csv'
              data_gas.to_csv(uploadfile1)
              data_tank.to_csv(uploadfile2)
+             
+             
+             subprocess.run(["python3", "pushtosql_flow.py"])
+
+    
                
                
                
