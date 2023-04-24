@@ -227,8 +227,8 @@ if __name__ == '__main__':
              curr = time.ctime(curr) 
              uploadfile1 = 'sensor_all' + '.csv'
              uploadfile2 = 'tank_data' + '.csv'
-             data_gas.to_csv(uploadfile1, 'w')
-             data_tank.to_csv(uploadfile2, 'w')
+             data_gas.to_csv(uploadfile1)
+             data_tank.to_csv(uploadfile2)
              
              
              subprocess.run(["python3", "pushtosql_flow.py"])
