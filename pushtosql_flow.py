@@ -19,35 +19,16 @@ import pandas as pd
 data = pd.read_csv ('sensor_all.csv')
 #data = pd.read_csv (r'/home/farscopestudent/Documents/WASE/wase-cabinet/flowmeter_push.csv')  
 df_biogasflow = pd.DataFrame(data)
+
+
+
+
 print(df_biogasflow)
 
+df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'])
+df_biogasflow['datetime'] = df_biogasflow['datetime'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
-
-
-
-# def resample_mean(df, time, cols, round_val, level_name):
-#   df.dropna(inplace=True)
-#   df =  df[(df.astype(float) >= 0.0).all(1)]
-#   df = df.groupby([pd.Grouper(freq=time, level='datetime'), pd.Grouper(level=level_name)])[cols].mean() 
-#   df = df.round(round_val)
-#   return df
-
-# def resample_sum(df, time, cols, round_val, level_name):
-#   df.dropna(inplace=True)
-#   df= df[(df.astype(float) >= 0.0).all(1)]
-#   df = df.groupby([pd.Grouper(freq=time, level='datetime'), pd.Grouper(level=level_name)])[cols].sum()
-#   df = df.round(round_val)
-#   return df
-
-# def resample_max(df, time, cols, round_val, level_name):
-#   df.dropna(inplace=True)
-#   df= df[(df.astype(float) >= 0.0).all(1)]
-#   df = df.groupby([pd.Grouper(freq=time, level='datetime'), pd.Grouper(level=level_name)])[cols].max()
-#   df = df.round(round_val)
-#   return df
-
-
-
+df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, np.nan)
 
 
 
