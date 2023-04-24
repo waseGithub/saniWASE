@@ -197,14 +197,15 @@ if __name__ == '__main__':
                     # print('processing gas data')
                     df = df.iloc[:, : 5]
                     data_gas = data_gas.append(df)
+                    print(upload_file)
                     os.remove(upload_file)
                     # print(data_gas)
-                 else:
-                    df = df.iloc[:, : 3]
-                    # print('processing tank data')
-                    data_tank = data_tank.append(df)
-                    os.remove(upload_file)
-                    # print(data_tank)
+                #  else:
+                #     df = df.iloc[:, : 3]
+                #     # print('processing tank data')
+                #     data_tank = data_tank.append(df)
+                #     os.remove(upload_file)
+                #     # print(data_tank)
                     
                     
                   
@@ -215,7 +216,7 @@ if __name__ == '__main__':
              data_gas.columns =['ID','CH4','CO2','OH','Cnt']
              data_gas.reset_index(inplace =True)
              data_gas.set_index(['datetime'], inplace = True)
-             data_gas = data_gas[::200]
+            #  data_gas = data_gas[::200]
              data_tank = data_tank[::50]
 #              data_tank.columns =['Sensor_value','EQ_waste_height_mm','EQ_volume_%']
              try:
