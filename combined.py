@@ -181,7 +181,7 @@ if __name__ == '__main__':
        #######################################
       ####################################### 
 
-         time_gap = 3
+         time_gap = 1
 
          print('Targat time gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
