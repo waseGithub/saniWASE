@@ -183,7 +183,9 @@ if __name__ == '__main__':
        #######################################
       ####################################### 
 
-         time_gap = 3  
+         time_gap = 10
+
+         print('Targat time gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
          time_difference = current_time - start_time
          print('time diff is:: ', time_difference)
