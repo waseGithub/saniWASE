@@ -31,7 +31,7 @@ df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'])
 
 df_biogasflow.set_index(['datetime', 'ID'], inplace=True)
 
-df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, np.nan)
+df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, 0)
 
 
 
