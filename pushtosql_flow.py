@@ -23,20 +23,33 @@ df_biogasflow = pd.DataFrame(data)
 
 
 
-print(df_biogasflow)
+
 
 df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'])
-df_biogasflow['datetime'] = df_biogasflow['datetime'].dt.strftime('%Y-%m-%d %H:%M:%S')
+
+
+
+df_biogasflow.set_index(['datetime', 'ID'], inplace=True)
 
 df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, np.nan)
 
 
 
+df_biogasflow = df_biogasflow.groupby(level='ID').resample('10T', level=0).max()
 
 
 
 
 
+
+
+
+
+
+
+print(df_biogasflow)
+df_biogasflow.reset_index(inplace=True)
+df_biogasflow['datetime'] = df_biogasflow['datetime'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
 
 

@@ -105,9 +105,9 @@ if __name__ == '__main__':
     ser5.flush()
     i = 0
 
-   
+    start_time = datetime.datetime.now()
     while True:
-         i +=1
+      
          print('Current count =')
          print(i)
          try:
@@ -180,9 +180,17 @@ if __name__ == '__main__':
         #change the i value below dependig
         #on how regular updtaes to drive are required  
        #######################################
-      #######################################   
-                
-         if i == 50: 
+      ####################################### 
+
+         time_gap = 3  
+         current_time = datetime.datetime.now()
+         time_difference = current_time - start_time
+         print('time diff is:: ', time_difference, 'time till next push is::', (time_gap - time_difference))
+
+         
+         if time_difference >= datetime.timedelta(minutes=time_gap):
+             print('passed')
+             
              i = 0
              data_gas = pd.DataFrame()
              data_tank = pd.DataFrame()
@@ -234,6 +242,7 @@ if __name__ == '__main__':
              
              subprocess.run(["python3", "pushtosql_flow.py"])
              os.remove('sensor_all' + '.csv')
+             start_time = datetime.datetime.now()
 
              
 
