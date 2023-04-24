@@ -26,7 +26,7 @@ df_biogasflow = pd.DataFrame(data)
 
 
 df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'])
-
+df_biogasflow = df_biogasflow[df_biogasflow['ID'].isin([1, 2, 3, 4])]
 
 
 df_biogasflow.set_index(['datetime', 'ID'], inplace=True)
