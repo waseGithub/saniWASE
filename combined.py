@@ -181,7 +181,7 @@ if __name__ == '__main__':
        #######################################
       ####################################### 
 
-         time_gap = 30
+         time_gap = 1
 
          print('Data push gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
@@ -237,13 +237,13 @@ if __name__ == '__main__':
              curr = time.ctime(curr) 
              uploadfile1 = 'sensor_all' + '.csv'
              uploadfile2 = 'tank_data' + '.csv'
-             data_gas.to_csv(uploadfile1)
-             data_tank.to_csv(uploadfile2)
+             data_gas.to_csv(uploadfile1, mode = 'a')
+             data_tank.to_csv(uploadfile2, mode = 'a')
              
              
-             subprocess.run(["python3", "pushtosql_flow.py"])
-             os.remove('sensor_all' + '.csv')
-             start_time = datetime.datetime.now()
+            #  subprocess.run(["python3", "pushtosql_flow.py"])
+            #  os.remove('sensor_all' + '.csv')
+            #  start_time = datetime.datetime.now()
 
              
 
@@ -253,19 +253,3 @@ if __name__ == '__main__':
                
        
             
-
-               
-                
-                 
-                 
-                 
-            #  upload_online = [uploadfile1, uploadfile2]
-            #  for file in upload_online:
-            #      file.to_csv(file)
-                 
-                #  gfile = drive.CreateFile({'x': [{'id': '317538577616-n40l0l6cvnar6bvv8mmks8huk5o80cs4.apps.googleusercontent.com'}]})
-                #  gfile.SetContentFile(file)
-                #  gfile.Upload() # Upload the file.
-
-                #  os.remove(file)
-                       
