@@ -181,7 +181,7 @@ if __name__ == '__main__':
        #######################################
       ####################################### 
 
-         time_gap = 1
+         time_gap = 0.2
 
          print('Data push gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
@@ -259,7 +259,7 @@ if __name__ == '__main__':
              
             #  subprocess.run(["python3", "pushtosql_flow.py"])
             #  os.remove('sensor_all' + '.csv')
-            #  start_time = datetime.datetime.now()
+             start_time = datetime.datetime.now()
 
              
 
