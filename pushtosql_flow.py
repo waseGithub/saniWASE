@@ -138,4 +138,7 @@ for i,row in df_biogasflow.iterrows():
 
 cnx.close()
 
+print('pushed')
+
+
 
