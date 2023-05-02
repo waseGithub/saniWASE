@@ -71,9 +71,6 @@ data_gas.to_csv(uploadfile1)
 data_tank.to_csv(uploadfile2)
 
 
-# subprocess.run(["python3", "pushtosql_flow.py"])
-# os.remove('sensor_all' + '.csv')
-# start_time = datetime.datetime.now()
 
             
 
