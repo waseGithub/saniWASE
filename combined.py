@@ -238,7 +238,23 @@ if __name__ == '__main__':
              uploadfile1 = 'sensor_all' + '.csv'
              uploadfile2 = 'tank_data' + '.csv'
              data_gas.to_csv(uploadfile1, mode = 'a')
-             data_tank.to_csv(uploadfile2, mode = 'a')
+
+             if os.path.isfile(uploadfile1) and os.path.getsize(uploadfile1) > 0:
+                # File exists and is not empty, don't write header
+                data_gas.to_csv(uploadfile1, mode='a', index=False, header=False)
+             else:
+                # File does not exist or is empty, write header
+                data_gas.to_csv(uploadfile1, mode='a', index=False, header=True)
+             
+             if os.path.isfile(uploadfile2) and os.path.getsize(uploadfile2) > 0:
+                # File exists and is not empty, don't write header
+                data_gas.to_csv(uploadfile2, mode='a', index=False, header=False)
+             else:
+                # File does not exist or is empty, write header
+                data_gas.to_csv(uploadfile1, mode='a', index=False, header=True)
+
+
+            #  data_tank.to_csv(uploadfile2, mode = 'a')
              
              
             #  subprocess.run(["python3", "pushtosql_flow.py"])
