@@ -94,7 +94,9 @@ df_biogasflow = df_biogasflow[df_biogasflow['ID'].isin([1, 2, 3, 4])]
 
 df_biogasflow.set_index(['datetime', 'ID'], inplace=True)
 
-df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, 0)
+
+
+df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, 0).astype(str).replace('-1', '0').astype(float)
 
 
 
