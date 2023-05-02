@@ -87,7 +87,7 @@ ser1 = serial.Serial(str(Megas[0]),  38400, timeout = 25)
 ser2 = serial.Serial(str(Megas[1]),  38400, timeout = 25)
 ser3 = serial.Serial(str(Megas[2]),  38400, timeout = 25)
 ser4 = serial.Serial(str(Megas[3]),  38400, timeout = 25)
-ser5 = serial.Serial(str(unos[0]),  38400, timeout = 25)
+#ser5 = serial.Serial(str(unos[0]),  38400, timeout = 25)
 print("channels correct")
     
 time.sleep(5)
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     ser2.flush()
     ser3.flush()
     ser4.flush()
-    ser5.flush()
+#    ser5.flush()
     i = 0
 
     start_time = datetime.datetime.now()
@@ -154,16 +154,16 @@ if __name__ == '__main__':
                     writer = csv.writer(f, delimiter=",")
                     writer.writerow([time.asctime(),line4])
             
-            if ser5.in_waiting > 0:
-                try:
-                    line5 = ser5.readline().decode("utf-8")
-                except SerialException:
-                    continue
-                
-                with open ("Sensor_E.csv","a") as f:
-                    
-                    writer = csv.writer(f, delimiter=",")
-                    writer.writerow([time.asctime(),line5])
+#            if ser5.in_waiting > 0:
+#                try:
+#                    line5 = ser5.readline().decode("utf-8")
+#                except SerialException:
+#                    continue
+#                
+#                with open ("Sensor_E.csv","a") as f:
+#                    
+#                    writer = csv.writer(f, delimiter=",")
+#                    writer.writerow([time.asctime(),line5])
             print('writing gas data')
             print(line1)
             print(line2)
@@ -183,10 +183,10 @@ if __name__ == '__main__':
 
          time_gap = 30
 
-         print('Targat time gap is::', time_gap , 'mins')  
+         print('Data push gap is::', time_gap , 'mins')  
          current_time = datetime.datetime.now()
          time_difference = current_time - start_time
-         print('time diff is:: ', time_difference)
+         print('Time till push:: ', time_difference)
 
          
          if time_difference >= datetime.timedelta(minutes=time_gap):
