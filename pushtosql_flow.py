@@ -26,7 +26,7 @@ def replace_string_with_zero(value):
 
 def replace_negative_with_zero(value):
     if value < 0:
-        return 0
+        return abs(0)
     else:
         return value
 
