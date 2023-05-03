@@ -35,7 +35,7 @@ for upload_file in upload_file_list:
         df = df.iloc[:, : 5]
         data_gas = data_gas.append(df)
         print(upload_file)
-        os.remove(upload_file)
+        
     # print(data_gas)
 #  else:
 #     df = df.iloc[:, : 3]
@@ -143,5 +143,9 @@ cnx.close()
 
 print('pushed')
 
+os.remove('Sensor_A.csv')
+os.remove('Sensor_B.csv')
+os.remove('Sensor_C.csv')
+os.remove('Sensor_D.csv')
 
 
