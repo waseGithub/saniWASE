@@ -115,7 +115,7 @@ df_biogasflow = df_biogasflow.groupby(level='ID').resample('30T', level=0).max()
 print(df_biogasflow)
 df_biogasflow.reset_index(inplace=True)
 # df_biogasflow['datetime'] = df_biogasflow['datetime'].dt.strftime('%Y-%m-%d %H:%M:%S')
-print('reset_datetrime')
+
 
 
 
