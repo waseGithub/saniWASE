@@ -18,6 +18,21 @@ import re
 
 
 
+def replace_string_with_zero(value):
+    if isinstance(value, str):
+        return 0
+    else:
+        return value
+
+def replace_negative_with_zero(value):
+    if value < 0:
+        return 0
+    else:
+        return value
+
+
+
+
 
 
 
@@ -96,7 +111,12 @@ df_biogasflow.set_index(['datetime', 'ID'], inplace=True)
 
 
 
-df_biogasflow = df_biogasflow.where(df_biogasflow >= 0, 0).astype(str).replace('-1', '0').astype(float)
+
+df_biogasflow = df_biogasflow.applymap(replace_string_with_zero)
+
+df_biogasflow = df_biogasflow.applymap(replace_negative_with_zero)
+
+
 
 
 
