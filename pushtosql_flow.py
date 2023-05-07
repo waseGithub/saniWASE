@@ -103,7 +103,7 @@ df_biogasflow = pd.DataFrame(data)
 
 
 
-df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'])
+df_biogasflow['datetime'] = pd.to_datetime(df_biogasflow['datetime'], errors= 'coerce')
 df_biogasflow = df_biogasflow[df_biogasflow['ID'].isin([1, 2, 3, 4])]
 
 
