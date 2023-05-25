@@ -44,6 +44,7 @@ upload_file_list = ['/home/wase/saniWASE/Sensor_A.csv', '/home/wase/saniWASE/Sen
 colnames = ['datetime','vals']
 for upload_file in upload_file_list:
     df = pd.read_csv(upload_file,index_col=0, skiprows=0, names = colnames)
+    print(df)
     df = df['vals'].str.split(',', expand=True)
     df.index = pd.to_datetime(df.index, format="%a %b %d %X %Y")
     if len(df.columns) > 4:
